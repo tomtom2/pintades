@@ -1,0 +1,30 @@
+
+param:  PROP:         age_eclosion    age_ponte  age_vieillesse  age_mort   :=
+        pintade       1               3          9              12 ;
+
+
+param:  ELEVAGE:         qtt_gardee  qtt_vendu_max  age_vente_min  age_vente_max  conso_grain  prix  prix_oeuf  :=
+        label_rouge       .           100           3              9              1             7.0   0.6
+        normale           .          1000           1              9              1             5.0   0.4  ;
+
+param:  TRANSPORT:       qtt_trans  cost_trans   capacity travel_cost:=
+        estafette        0               5000        100       5
+        fourgonnette     1              15000        500       6 ;
+
+param: FURNITURES:   qtt_grain  cost_grain  :=
+       grain         1          1
+       grain_deluxe  1          1.3 ;
+
+param:  STRUCTURES:       surface_max  cost_per_metre :=
+        outside_space     500          3
+        inside_space      400          50 ;
+
+param pintades_space (tr):
+                   outside_space  inside_space :=
+  label_rouge            0.5           0.08
+  normale                0.0           0.04 ;
+
+param pintades_food (tr):
+                   grain    grain_deluxe :=
+  label_rouge      0.0      1.0
+  normale          1.0      0.0 ;

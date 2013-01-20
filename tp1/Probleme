@@ -1,0 +1,67 @@
+
+#######################
+### initialisation du problème ###
+#######################
+
+Il y a 2ans, 1 couple de pintade
+
+On compte les pintades par couple, on fera l'approximation grossière qu'un oeuf engendre un couple.
+
+On raisonne par mois.
+On suppose que les pintades mangent toujours autant de leur naissance à leur mort.
+
+##################################
+
+
+
+###########################
+### les données et les dépendances ###
+###########################
+
+Une pintade
+================
++ un age en mois : age
++ une duree de vie maximum en mois: longévité = 100 mois
++ une date de maturité sexuelle en mois : maturité = 7
++ prix variant avec l'age en mois, l'allimentation et l'espace alloué: prix_pintade(age, cout_du_grain, espace_alloué_batisse, espace_alloué_batisse plein_air)
+prix_pintade_maximum = 15 euros
++ nombre d'oeuf pondu par mois: oeufs_pondus_par_mois = 10
+
+
+Oeuf
+================
++ un prix pour l'oeuf : prix_oeuf = 0,5 euros
+x possibilité de vendre l'oeuf ou le laisser éclore
+x un oeuf éclos un mois après
+
+Nourriture
+================
+xxx On suppose qu'une pintade mange 2 kilo de graine par mois.
++ prix de la nourriture en fonction du nombre de pintade par mois : prix_grain(qualité_grain, nombre_pintade) = qualité_grain * nombre_pintade euros
++ qualité_grain = prix_grain_au_kilo/prix_grain_moyen
++ prix_grain_moyen = 0,1€/Kg
+x il faut un camion, fourgonnette, ou estaffette ou pour aller chercher les grains --> limite la quantité de grain disponible
++ quantité_grain_disponible_par_mois = prix_transport (en Kg)
+
+Transport
+================
++ estafette 5000euros
++ fourgonnette 15000euros
+x cela limite la vente à un nombre maximum de pintade par mois.
+
+
+Investissement
+================
++ terrain 3 euros le mètre carré --> obtention du label rouge
++ agrandir la batisse 50 euros le mètre carré avec le terrain necessaire et les travaux --> augmenter sa capacité d'acceuil en pintade
+
+
+Label Rouge
+================
+taille_batisse <= 400 m^2
+densité_pintades_batisse <= 13 pintades/m^2
+densité_pintades_terrain_plein_air <= 2 pintades/m^2
+age_abattage >= 3 mois
+prix_pintade_label_rouge = 2*prix_pintade
+
+################################################################### 
